@@ -1,9 +1,13 @@
 <template>
-  <div></div>
+  <div class="index"></div>
 </template>
 
 <script>
-export default {}
+export default {
+  head: {
+    title: 'Home'
+  }
+}
 </script>
 
 <style scoped>
