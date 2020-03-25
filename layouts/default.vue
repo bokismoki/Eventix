@@ -3,14 +3,23 @@
     <div class="fixed top-0 left-0 w-full">
       <Header />
     </div>
+    <div v-if="isSideNavOpen" class="fixed bottom-0 w-full">
+      <SideNav />
+    </div>
     <nuxt />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   components: {
-    Header: () => import('~/components/Header')
+    Header: () => import('~/components/Header'),
+    SideNav: () => import('~/components/SideNav')
+  },
+  computed: {
+    ...mapGetters(['isSideNavOpen'])
   }
 }
 </script>
@@ -30,7 +39,6 @@ body {
 *:before,
 *:after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  @apply m-0 p-0;
 }
 </style>
