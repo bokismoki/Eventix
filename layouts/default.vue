@@ -1,12 +1,19 @@
 <template>
   <div>
-    <div class="fixed top-0 left-0 w-full">
+    <div class="fixed top-0 left-0 w-full z-50">
       <Header />
     </div>
     <div v-if="isSideNavOpen" class="fixed bottom-0 w-full">
       <SideNav />
     </div>
-    <nuxt />
+    <div class="flex">
+      <div class="lg:w-3/4">
+        <nuxt />
+      </div>
+      <div class="hidden lg:block lg:w-1/4">
+        <Aside />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -16,7 +23,8 @@ import { mapGetters } from 'vuex'
 export default {
   components: {
     Header: () => import('~/components/Header'),
-    SideNav: () => import('~/components/SideNav')
+    SideNav: () => import('~/components/SideNav'),
+    Aside: () => import('~/components/Aside')
   },
   computed: {
     ...mapGetters(['isSideNavOpen'])
@@ -32,7 +40,7 @@ html {
 }
 
 body {
-  color: #0f0d19;
+  @apply text-main-dark;
 }
 
 *,

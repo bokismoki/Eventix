@@ -1,8 +1,8 @@
 <template>
   <div class="search-events w-full">
-    <div class="flex items-center max-w-sm mx-auto">
+    <div class="flex items-center max-w-sm mx-auto flex justify-center">
       <input
-        class="bg-main-gray w-full px-2 py-3 rounded rounded-tr-none rounded-br-none text-sm text-white"
+        class="bg-main-gray w-2/3 px-2 py-3 rounded rounded-tr-none rounded-br-none text-sm text-white"
         type="text"
         placeholder="Search Events..."
         @mouseenter="focus"
