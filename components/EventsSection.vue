@@ -1,6 +1,6 @@
 <template>
   <section class="events-section">
-    <div class="px-5 pb-20">
+    <div class="px-5 pb-20 lg:px-10">
       <div class="flex justify-between items-center">
         <h1 class="font-bold text-lg">{{section.heading}}</h1>
         <div class="line bg-black opacity-10 w-full mx-5"></div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <header class="header">
     <div class="flex items-center">
       <div class="p-4 bg-main-dark w-full flex justify-between items-center md:p-10 lg:w-3/4">
         <nuxt-link :to="{name: 'index'}">
@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>

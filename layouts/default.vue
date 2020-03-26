@@ -9,6 +9,7 @@
     <div class="flex">
       <div class="lg:w-3/4">
         <nuxt />
+        <Footer />
       </div>
       <div class="hidden lg:block lg:w-1/4">
         <Aside />
@@ -24,6 +25,7 @@ export default {
   components: {
     Header: () => import('~/components/Header'),
     SideNav: () => import('~/components/SideNav'),
+    Footer: () => import('~/components/Footer'),
     Aside: () => import('~/components/Aside')
   },
   computed: {

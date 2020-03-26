@@ -34,11 +34,7 @@
             <span class="font-semibold">Phone:</span> +1 800 585 - 8930
           </p>
         </div>
-        <div class="text-white text-sm font-semibold">
-          <a href="#">Facebook</a>
-          <a class="ml-3" href="#">Twitter</a>
-          <a class="ml-3" href="#">Instagram</a>
-        </div>
+        <SocialNetworks theme='light' />
       </div>
     </div>
   </section>
@@ -47,6 +43,9 @@
 <script>
 export default {
   name: 'Hero',
+  components: {
+    SocialNetworks: () => import('~/components/SocialNetworks')
+  },
   data() {
     return {
       videoMp4: require('~/assets/video/hero-video.mp4'),
