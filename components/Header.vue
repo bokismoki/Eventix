@@ -23,7 +23,7 @@
       <div class="hidden bg-black self-stretch px-5 justify-center items-center lg:flex lg:w-1/4">
         <h3 class="text-white text-lg font-semibold">Latest News</h3>
         <div class="ml-5">
-          <SeeAll />
+          <SeeAll theme="dark" path="news" />
         </div>
       </div>
     </div>
