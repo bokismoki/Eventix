@@ -77,7 +77,7 @@ h1::after {
   left: 50%;
   top: 40px;
   transform: translateX(-50%);
-  width: 500px;
+  width: 700px;
   height: 70px;
   background-image: url('https://assets.website-files.com/5e6bb7107023eaa038ce209f/5e6bb913b32abe7c38d7135f_eq-bars.svg');
 }
