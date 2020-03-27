@@ -64,10 +64,22 @@ export default {
       return this.$route.name !== 'index'
     },
     heading() {
-      if (this.$route.name === 'index') {
-        return 'Never miss an event'
-      } else {
-        return `${this.$route.name}`
+      switch (this.$route.name) {
+        case 'contact':
+          return 'Contact'
+          break
+        case 'news':
+          return 'Latest News'
+          break
+        case 'news-title':
+          return this.$params.title
+        case 'events':
+          return 'Events'
+        case 'events-title':
+          return this.$params.title
+        default:
+          return 'Never miss an event'
+          break
       }
     }
   }

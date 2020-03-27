@@ -10,8 +10,14 @@
           <p
             class="uppercase text-main-purple text-sm font-semibold tracking-widest mt-5"
           >{{item.date}}</p>
-          <h1 class="text-white font-semibold mt-1">{{item.title}}</h1>
-          <p class="text-white opacity-75 text-sm mt-3">{{item.paragraph}}</p>
+          <h1
+            class="font-semibold mt-1"
+            :class="{'text-white': text === 'light', 'text-main-dark hover:text-main-purple': text === 'dark'}"
+          >{{item.title}}</h1>
+          <p
+            class="text-white opacity-75 text-sm mt-3"
+            :class="{'text-white': text === 'light', 'text-main-dark': text === 'dark'}"
+          >{{item.paragraph}}</p>
         </div>
       </div>
     </nuxt-link>
@@ -21,7 +27,7 @@
 <script>
 export default {
   name: 'NewsItem',
-  props: ['item'],
+  props: ['item', 'text'],
   computed: {
     titleParam() {
       return this.item.title.toLowerCase().replace(/ /g, '-')
@@ -32,6 +38,8 @@ export default {
 
 <style scoped>
 .bg {
-  height: 20vh;
+  min-height: 200px;
+  max-height: 300px;
+  height: 25vh;
 }
 </style>

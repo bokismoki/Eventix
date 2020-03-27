@@ -10,7 +10,7 @@
         :style="{'background-image': `url(${dotsBg})`}"
       ></div>
       <div
-        class="content absolute h-full mt-10 text-white text-center w-full px-5 bg-center bg-no-repeat flex"
+        class="content absolute h-full text-white text-center w-full px-5 bg-center bg-no-repeat flex"
         :style="{'background-image': `url(${brushBg})`}"
       >
         <div class="relative m-auto">
