@@ -1,6 +1,6 @@
 <template>
   <div class="news-item">
-    <nuxt-link :to="{name: 'news', params: {title: titleParam}}">
+    <nuxt-link :to="{name: 'news-title', params: {title: titleParam}}">
       <div class="mt-10">
         <div
           class="bg w-full rounded bg-center bg-cover"

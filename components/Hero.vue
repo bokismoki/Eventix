@@ -72,11 +72,11 @@ export default {
           return 'Latest News'
           break
         case 'news-title':
-          return this.$params.title
+          return this.$route.params.title
         case 'events':
           return 'Events'
         case 'events-title':
-          return this.$params.title
+          return this.$route.params.title
         default:
           return 'Never miss an event'
           break
@@ -94,7 +94,7 @@ export default {
 }
 
 .not-home {
-  height: 50vh;
+  height: 55vh;
   min-height: 400px;
   max-height: 600px;
 }

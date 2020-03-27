@@ -5,7 +5,7 @@
         <h2 class="text-main-dark font-black text-lg">Give Us A Shout</h2>
         <div class="line bg-black opacity-10 w-full mx-5"></div>
       </div>
-      <div class="mt-20">
+      <div class="mt-10">
         <form>
           <input
             class="block w-full p-2 bg-gray-400 text-sm placeholder-black rounded"
