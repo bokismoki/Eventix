@@ -74,7 +74,7 @@ export default {
         case 'news-title':
           return this.$route.params.title
         case 'events':
-          return 'Events'
+          return 'Upcoming Events'
         case 'events-title':
           return this.$route.params.title
         default:
