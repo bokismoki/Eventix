@@ -3,7 +3,7 @@
     <div class="fixed top-0 left-0 w-full z-50">
       <Header />
     </div>
-    <div v-if="isSideNavOpen" class="fixed bottom-0 w-full">
+    <div v-if="isSideNavOpen" class="fixed bottom-0 w-full z-50">
       <SideNav />
     </div>
     <div class="flex">
@@ -11,7 +11,9 @@
         <nuxt />
         <Footer />
       </div>
-      <div class="hidden lg:block lg:w-1/4">
+      <div
+        class="aside hidden bg-main-dark w-1/4 overflow-scroll min-h-screen max-h-screen top-0 right-0 fixed lg:block"
+      >
         <Aside />
       </div>
     </div>
