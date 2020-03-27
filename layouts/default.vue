@@ -8,6 +8,7 @@
     </div>
     <div class="flex">
       <div class="lg:w-3/4">
+        <Hero />
         <nuxt />
         <Footer />
       </div>
@@ -27,6 +28,7 @@ export default {
   components: {
     Header: () => import('~/components/Header'),
     SideNav: () => import('~/components/SideNav'),
+    Hero: () => import('~/components/Hero'),
     Footer: () => import('~/components/Footer'),
     Aside: () => import('~/components/Aside')
   },

@@ -1,6 +1,5 @@
 <template>
   <main class="main">
-    <Hero />
     <div class="pt-20">
       <div v-for="section in sections" :key="section.id">
         <EventsSection :section="section" />
@@ -13,7 +12,6 @@
 export default {
   name: 'Main',
   components: {
-    Hero: () => import('~/components/Hero'),
     EventsSection: () => import('~/components/EventsSection')
   },
   data() {
