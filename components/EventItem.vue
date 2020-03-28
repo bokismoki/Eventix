@@ -1,7 +1,7 @@
 <template>
   <div class="event-item">
     <nuxt-link
-      :to="{name: 'events', params: {title: item.title}}"
+      :to="{name: 'events-title', params: {title: titleParam}}"
       class="item-bg block relative w-full h-full bg-center bg-cover mt-5 rounded overflow-hidden"
       :style="{'background-image': `url(${item.bg})`}"
     >
@@ -30,6 +30,11 @@ export default {
   data() {
     return {
       barsBg: require('~/assets/img/bars.svg')
+    }
+  },
+  computed: {
+    titleParam() {
+      return this.item.title.toLowerCase().replace(/ /g, '-')
     }
   }
 }
