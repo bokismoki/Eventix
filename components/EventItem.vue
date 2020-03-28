@@ -2,11 +2,15 @@
   <div class="event-item">
     <nuxt-link
       :to="{name: 'events-title', params: {title: titleParam}}"
-      class="item-bg block relative w-full h-full bg-center bg-cover mt-5 rounded overflow-hidden"
+      class="item-bg block relative w-full h-full bg-center mt-5 rounded transition-all duration-500 ease-in-out"
       :style="{'background-image': `url(${item.bg})`}"
     >
-      <div class="hidden absolute w-full h-full bg-main-purple opacity-90 rounded"></div>
-      <div class="hidden relative p-5 h-full flex-col justify-between">
+      <div
+        class="absolute w-full h-full bg-main-purple opacity-0 rounded transition-all duration-500 ease-in-out"
+      ></div>
+      <div
+        class="relative p-5 h-full flex flex-col opacity-0 justify-between transition-all duration-500 ease-in-out"
+      >
         <div class="font-semibold text-center">
           <h3 class="text-sm text-gray-400">{{item.date}}</h3>
           <h1 class="text-white font-black text-xl my-3">{{item.title}}</h1>
@@ -45,8 +49,16 @@ export default {
   @apply h-full;
 }
 
+.item-bg {
+  background-size: 100%;
+}
+
+.event-item:hover .item-bg {
+  background-size: 110%;
+}
+
 a:hover > div,
 a:focus > div {
-  @apply flex;
+  @apply opacity-90;
 }
 </style>

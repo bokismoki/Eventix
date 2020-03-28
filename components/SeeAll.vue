@@ -1,12 +1,12 @@
 <template>
   <nuxt-link
     :to="{name: path}"
-    class="see-all bg-transparent border rounded px-2 py-1 flex items-center group"
-    :class="{'border-gray-100 hover:bg-white focus:bg-white': theme === 'dark', 'border-gray-400 hover:bg-main-dark focus:bg-main-dark': theme === 'light'}"
+    class="see-all border rounded px-2 py-1 flex items-center"
+    :class="{'border-gray-100 hover:border-main-purple focus:border-main-purple': theme === 'dark', 'border-gray-400 hover:border-main-purple focus:border-main-purple': theme === 'light'}"
   >
     <span
       class="text-sm font-semibold"
-      :class="{'text-white group-hover:text-main-dark': theme === 'dark', 'text-main-dark group-hover:text-white': theme === 'light'}"
+      :class="{'text-white': theme === 'dark', 'text-main-dark': theme === 'light'}"
     >See All</span>
     <span>
       <img class="w-5 h-5" src="~/assets/img/plus.svg" alt="Plus" />

@@ -12,6 +12,8 @@
       />
       <button
         class="bg-main-gray opacity-75 ml-4 p-1 rounded w-12 h-12 flex"
+        @mouseenter="focus"
+        @mouseleave="blur"
         @focus="focus"
         @blur="blur"
       >

@@ -1,15 +1,10 @@
 <template>
   <div class="hamburger-menu">
     <button
-      class="bg-main-purple p-1 rounded w-12 h-12 flex hover:bg-white focus:bg-white"
-      ref="button"
-      @mouseenter="focus"
-      @mouseleave="blur"
-      @focus="focus"
-      @blur="blur"
+      class="bg-main-purple p-1 rounded w-12 h-12 flex"
       @click="toggleSideNav"
     >
-      <img class="w-8 h-8 m-auto" :src="image" alt="Hamburger Menu" />
+      <img class="w-8 h-8 m-auto" :src="src" alt="Hamburger Menu" />
     </button>
   </div>
 </template>
@@ -21,22 +16,18 @@ export default {
   name: 'HamburgerMenu',
   data() {
     return {
-      image: require('~/assets/img/menu.svg'),
-      imageDefault: require('~/assets/img/menu.svg'),
-      imageHover: require('~/assets/img/menu-dark.svg')
+      hamburger: require('~/assets/img/menu.svg'),
+      cross: require('~/assets/img/cross.svg')
     }
   },
   computed: {
-    ...mapGetters(['isSideNavOpen'])
+    ...mapGetters(['isSideNavOpen']),
+    src() {
+      return this.isSideNavOpen ? this.cross : this.hamburger
+    }
   },
   methods: {
     ...mapActions(['setIsSideNavOpen']),
-    focus() {
-      this.image = this.imageHover
-    },
-    blur() {
-      this.image = this.imageDefault
-    },
     toggleSideNav() {
       this.setIsSideNavOpen(!this.isSideNavOpen)
     }

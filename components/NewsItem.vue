@@ -3,7 +3,7 @@
     <nuxt-link :to="{name: 'news-title', params: {title: titleParam}}">
       <div class="mt-10">
         <div
-          class="bg w-full rounded bg-center bg-cover"
+          class="bg w-full rounded bg-center transition-all duration-500 ease-in-out"
           :style="{'background-image': `url(${item.bg})`}"
         ></div>
         <div>
@@ -38,8 +38,14 @@ export default {
 
 <style scoped>
 .bg {
+  background-size: 100%;
   min-height: 200px;
   max-height: 300px;
   height: 25vh;
+}
+
+a:hover .bg,
+a:focus .bg {
+  background-size: 110%;
 }
 </style>

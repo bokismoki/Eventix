@@ -21,12 +21,14 @@
           >Partying since 2020</h2>
           <h1 class="font-black capitalize text-5xl leading-tight mt-5 lg:text-6xl">{{heading}}</h1>
           <div v-if="!isNotHomePage" class="mt-10 md:flex md:items-center">
-            <button
-              class="w-full py-3 font-semibold bg-main-purple border border-main-purple rounded hover:bg-white hover:text-main-dark hover:border-white focus:bg-white focus:text-main-dark focus:border-white"
-            >Latest Events</button>
-            <button
-              class="w-full py-3 font-semibold rounded border border-gray-100 mt-5 hover:bg-white hover:text-main-dark focus:bg-white focus:text-main-dark md:mt-0 md:ml-5"
-            >Upcoming Events</button>
+            <nuxt-link
+              :to="{name: 'events'}"
+              class="w-full inline-block py-3 font-semibold bg-main-purple border border-main-purple rounded hover:bg-white hover:text-main-dark hover:border-white focus:bg-white focus:text-main-dark focus:border-white"
+            >Latest Events</nuxt-link>
+            <nuxt-link
+              :to="{name: 'events'}"
+              class="w-full inline-block py-3 font-semibold rounded border border-gray-100 mt-5 hover:bg-white hover:text-main-dark focus:bg-white focus:text-main-dark md:mt-0 md:ml-5"
+            >Upcoming Events</nuxt-link>
           </div>
         </div>
       </div>

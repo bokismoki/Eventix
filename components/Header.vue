@@ -21,9 +21,9 @@
         </div>
       </div>
       <div class="hidden bg-black self-stretch px-5 justify-center items-center lg:flex lg:w-1/4">
-        <h3 class="text-white text-lg font-semibold">Latest News</h3>
+        <h3 class="text-white text-lg font-semibold">{{displayH3}}</h3>
         <div class="ml-5">
-          <SeeAll theme="dark" path="news" />
+          <SeeAll theme="dark" :path="path" />
         </div>
       </div>
     </div>
@@ -38,6 +38,17 @@ export default {
     ShoppingCart: () => import('~/components/ShoppingCart'),
     HamburgerMenu: () => import('~/components/HamburgerMenu'),
     SeeAll: () => import('~/components/SeeAll')
+  },
+  computed: {
+    isRouteNews() {
+      return this.$route.name === 'news' || this.$route.name === 'news-title'
+    },
+    displayH3() {
+      return this.isRouteNews ? 'Upcoming Events' : 'Latest News'
+    },
+    path() {
+      return this.isRouteNews ? 'events' : 'news'
+    }
   }
 }
 </script>
