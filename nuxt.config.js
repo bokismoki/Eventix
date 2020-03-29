@@ -21,7 +21,13 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Eventix Webflow Ecommerce Website Template' }
+      { hid: 'description', name: 'description', content: 'Eventix Webflow Ecommerce Website Template' },
+      { hid: 'og:title', name: 'og:title', content: 'Eventix' },
+      { hid: 'og:locale', name: 'og:locale', content: 'en_EU' },
+      { hid: 'og:url', name: 'og:url', content: process.env.BASE_URL || 'http://localhost:3000' },
+      { hid: 'og:type', name: 'og:type', content: 'website' },
+      { hid: 'og:type', name: 'og:type', content: 'https://assets.website-files.com/5e6bb7107023eaa038ce209f/5e70de9dfca9c9aaf8911d2b_hero-video-poster-00001.jpg' },
+      { hid: 'og:description', name: 'og:description', content: 'Eventix Webflow Ecommerce Website Template' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -62,7 +68,6 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'http://localhost:3000/api'
   },
   /*
   ** Build configuration
