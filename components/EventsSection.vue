@@ -7,8 +7,8 @@
         <SeeAll theme="light" :path="section.seeAllRoute" />
       </div>
       <div class="grid">
-        <div v-for="(item, index) in 5" :key="index">
-          <EventItem :item="section.item" />
+        <div v-for="(item, index) in events" :key="item.id">
+          <EventItem :item="item" :index="index" />
         </div>
       </div>
     </div>
@@ -16,12 +16,17 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
+
 export default {
   name: 'EventsSection',
   props: ['section'],
   components: {
     EventItem: () => import('~/components/EventItem'),
     SeeAll: () => import('~/components/SeeAll')
+  },
+  computed: {
+    ...mapGetters(['events'])
   }
 }
 </script>

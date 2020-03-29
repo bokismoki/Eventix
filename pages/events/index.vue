@@ -2,8 +2,8 @@
   <div class="events">
     <div class="px-5 py-20 md:px-10">
       <div class="grid">
-        <div v-for="(event, index) in 11" :key="index">
-          <EventItem :item="item" />
+        <div v-for="(item, index) in events" :key="item.id">
+          <EventItem :item="item" :index="index" />
         </div>
       </div>
     </div>
@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   head: {
     title: 'Upcoming Events'
@@ -18,17 +20,8 @@ export default {
   components: {
     EventItem: () => import('~/components/EventItem')
   },
-  data() {
-    return {
-      item: {
-        heading: 'Upcoming Events',
-        title: 'Halloween',
-        bg: require('~/assets/img/item-bg.jpg'),
-        date: 'JUN 23 - JUN 30',
-        location: 'Belgrade',
-        seeAllRoute: 'events'
-      }
-    }
+  computed: {
+    ...mapGetters(['events'])
   }
 }
 </script>

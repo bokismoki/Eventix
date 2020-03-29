@@ -2,7 +2,7 @@
   <div class="news-title">
     <div class="px-5 py-20 md:px-10">
       <div>
-        <img class="mx-auto w-full rounded md:hidden" src="~/assets/img/news-bg.jpg" alt="News Image" />
+        <img class="mx-auto w-full rounded md:hidden" :src="getNewsImage" alt="News Image" />
         <div class="md:flex">
           <div>
             <h1
@@ -19,7 +19,7 @@
           </div>
           <img
             class="hidden ml-5 rounded self-start md:inline"
-            src="~/assets/img/news-bg.jpg"
+            :src="getNewsImage"
             alt="News Image"
           />
         </div>
@@ -39,10 +39,22 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   head() {
     return {
       title: this.$route.params.title
+    }
+  },
+  computed: {
+    ...mapGetters(['news']),
+    getNewsImage() {
+      return this.news.find(
+        item =>
+          item.title.toLowerCase().replace(/ /g, '-') ===
+          this.$route.params.title
+      ).bg
     }
   }
 }

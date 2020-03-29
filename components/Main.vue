@@ -21,7 +21,7 @@ export default {
           id: 0,
           heading: 'Upcoming Events',
           item: {
-            bg: require('~/assets/img/item-bg.jpg'),
+            bg: require('~/assets/img/event0-bg.jpg'),
             date: 'JUN 23 - JUN 30',
             title: 'Halloween',
             location: 'Belgrade'
@@ -32,7 +32,7 @@ export default {
           id: 1,
           heading: 'Featured Events',
           item: {
-            bg: require('~/assets/img/item-bg.jpg'),
+            bg: require('~/assets/img/event0-bg.jpg'),
             date: 'JUL 30',
             title: 'Halloween',
             location: 'Belgrade'
@@ -43,7 +43,7 @@ export default {
           id: 2,
           heading: 'Latest Events',
           item: {
-            bg: require('~/assets/img/item-bg.jpg'),
+            bg: require('~/assets/img/event0-bg.jpg'),
             date: 'DEC 3',
             title: 'Halloween',
             location: 'Belgrade'

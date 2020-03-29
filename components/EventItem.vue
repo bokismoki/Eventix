@@ -30,7 +30,7 @@
 <script>
 export default {
   name: 'EventItem',
-  props: ['item'],
+  props: ['item', 'index'],
   data() {
     return {
       barsBg: require('~/assets/img/bars.svg')

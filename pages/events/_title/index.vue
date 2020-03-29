@@ -3,7 +3,7 @@
     <div class="px-5 py-16 md:px-10">
       <div class="lg:flex">
         <div class="lg:w-1/3">
-          <img class="mx-auto w-full rounded" src="~/assets/img/item-bg.jpg" alt="Event Image" />
+          <img class="mx-auto w-full rounded" :src="getEventsImage" alt="Event Image" />
         </div>
         <div class="lg:w-2/3 lg:ml-10">
           <h2 class="mt-10 font-semibold text-xl lg:mt-0">Event Details</h2>
@@ -38,10 +38,22 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   head() {
     return {
       title: this.$route.params.title
+    }
+  },
+  computed: {
+    ...mapGetters(['events']),
+    getEventsImage() {
+      return this.events.find(
+        item =>
+          item.title.toLowerCase().replace(/ /g, '-') ===
+          this.$route.params.title
+      ).bg
     }
   }
 }
