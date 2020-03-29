@@ -92,13 +92,11 @@ export default {
 .home {
   height: 80vh;
   min-height: 550px;
-  max-height: 900px;
 }
 
 .not-home {
   height: 55vh;
   min-height: 400px;
-  max-height: 600px;
 }
 
 .content.home {

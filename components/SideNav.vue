@@ -1,6 +1,6 @@
 <template>
-  <nav class="side-nav">
-    <div class="bg-main-dark p-5 h-full max-w-md ml-auto">
+  <nav class="side-nav overflow-y-auto">
+    <div class="bg-main-dark p-5">
       <div class="flex justify-center lg:hidden">
         <SearchEvents />
       </div>
@@ -82,15 +82,18 @@ export default {
   },
   methods: {
     toggleDropdown(dropdown) {
-      this.isEventsOpen = false
-      this.isLocationsOpen = false
-      this.isVenuesOpen = false
       if (dropdown === 'events') {
-        this.isEventsOpen = true
+        this.isLocationsOpen = false
+        this.isVenuesOpen = false
+        this.isEventsOpen = !this.isEventsOpen
       } else if (dropdown === 'locations') {
-        this.isLocationsOpen = true
+        this.isEventsOpen = false
+        this.isVenuessOpen = false
+        this.isLocationsOpen = !this.isLocationsOpen
       } else {
-        this.isVenuesOpen = true
+        this.isEventsOpen = false
+        this.isLocationsOpen = false
+        this.isVenuesOpen = !this.isVenuesOpen
       }
     }
   }
@@ -125,24 +128,5 @@ ul > ul {
 
 ul > ul > li > span {
   @apply text-xs;
-}
-
-.side-nav {
-  min-height: calc(100vh - 80px);
-  max-height: 300px;
-  overflow: auto;
-}
-
-@media (min-width: 768px) {
-  .side-nav {
-    min-height: calc(100vh - 128px);
-    margin-right: 10vw;
-  }
-}
-
-@media (min-width: 1024px) {
-  .side-nav {
-    margin-right: 30vw;
-  }
 }
 </style>

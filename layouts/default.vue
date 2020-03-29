@@ -3,7 +3,7 @@
     <div class="fixed top-0 left-0 w-full z-50">
       <Header />
     </div>
-    <div v-if="isSideNavOpen" class="fixed bottom-0 w-full z-50">
+    <div v-if="isSideNavOpen" class="side-nav fixed right-0 w-full max-w-md z-50">
       <SideNav />
     </div>
     <div class="flex">
@@ -13,7 +13,7 @@
         <Footer />
       </div>
       <div
-        class="aside hidden bg-main-dark w-1/4 overflow-scroll min-h-screen max-h-screen top-0 right-0 fixed lg:block"
+        class="aside hidden bg-main-dark w-1/4 overflow-y-auto min-h-screen max-h-screen top-0 right-0 fixed lg:block"
       >
         <Aside />
       </div>
@@ -37,6 +37,25 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.side-nav {
+  top: 80px;
+  max-height: calc(100vh - 80px);
+}
+
+@media (min-width: 768px) {
+  .side-nav {
+    top: 128px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .side-nav {
+    right: 30vw;
+  }
+}
+</style>
 
 <style>
 html {

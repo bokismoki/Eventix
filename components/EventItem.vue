@@ -1,15 +1,17 @@
 <template>
-  <div class="event-item">
+  <div class="event-item" :class="{'inAside': isInAside}">
     <nuxt-link
       :to="{name: 'events-title', params: {title: titleParam}}"
-      class="item-bg block relative w-full h-full bg-center mt-5 rounded transition-all duration-500 ease-in-out"
+      class="item-bg block relative w-full h-full bg-center bg-no-repeat mt-5 rounded transition-all duration-500 ease-in-out"
+      :class="{'inAside': isInAside}"
       :style="{'background-image': `url(${item.bg})`}"
     >
       <div
         class="absolute w-full h-full bg-main-purple opacity-0 rounded transition-all duration-500 ease-in-out"
       ></div>
       <div
-        class="relative p-5 h-full flex flex-col opacity-0 justify-between transition-all duration-500 ease-in-out"
+        class="content relative p-5 h-full flex flex-col opacity-0 justify-between transition-all duration-500 ease-in-out"
+        :class="{'inAside': isInAside}"
       >
         <div class="font-semibold text-center">
           <h3 class="text-sm text-gray-400">{{item.date}}</h3>
@@ -30,7 +32,7 @@
 <script>
 export default {
   name: 'EventItem',
-  props: ['item', 'index'],
+  props: ['item', 'index', 'isInAside'],
   data() {
     return {
       barsBg: require('~/assets/img/bars.svg')
@@ -45,8 +47,14 @@ export default {
 </script>
 
 <style scoped>
-.event-item {
-  @apply h-full;
+.event-item,
+a,
+.content {
+  min-height: 500px;
+}
+
+.inAside {
+  min-height: 300px !important;
 }
 
 .item-bg {
@@ -60,5 +68,19 @@ export default {
 a:hover > div,
 a:focus > div {
   @apply opacity-90;
+}
+
+@media (min-width: 940px) {
+  .event-item,
+  a,
+  .content {
+    min-height: 450px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .inAside {
+    min-height: 450px !important;
+  }
 }
 </style>

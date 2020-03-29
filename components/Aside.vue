@@ -1,6 +1,6 @@
 <template>
   <aside class="aside">
-    <div class="px-10">
+    <div class="px-5 xl:px-8">
       <div v-if="!routeIsNews">
         <div v-for="item in news" :key="item.id">
           <NewsItem :item="item" text="light" />
@@ -8,7 +8,7 @@
       </div>
       <div v-else>
         <div v-for="(item, index) in events.slice(0, 4)" :key="item.id">
-          <EventItem :item="item" :index="index" />
+          <EventItem :item="item" :index="index" :isInAside="true" />
         </div>
       </div>
     </div>
